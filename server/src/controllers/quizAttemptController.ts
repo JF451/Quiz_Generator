@@ -1,6 +1,6 @@
 import { Response } from "express";
 import prisma from "../lib/prisma.js";
-import { AuthRequest } from "../middleware/authMiddleware";
+import { AuthRequest } from "../middleware/authMiddleware.js";
 
 export async function submitQuizAttempt(
   req: AuthRequest,

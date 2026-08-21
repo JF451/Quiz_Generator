@@ -1,8 +1,7 @@
 import { Response } from "express";
-import  prisma  from "../lib/prisma";
-import { AuthRequest } from "../middleware/authMiddleware";
-import { generateQuiz } from "../services/aiQuizService";
-
+import prisma from "../lib/prisma.js";
+import { AuthRequest } from "../middleware/authMiddleware.js";
+import { generateQuiz } from "../services/aiQuizService.js";
 export async function generateAIQuiz(
   req: AuthRequest,
   res: Response

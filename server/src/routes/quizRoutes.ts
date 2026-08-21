@@ -10,11 +10,11 @@ import {
 import {
   submitQuizAttempt,
   getMyAttempts
-} from "../controllers/quizAttemptController";
+} from "../controllers/quizAttemptController.js";
 import { authMiddleware } from "../middleware/authMiddleware.js";
 import {
   generateAIQuiz,
-} from "../controllers/aiQuizController";
+} from "../controllers/aiQuizController.js";
 
 const router = Router();
 

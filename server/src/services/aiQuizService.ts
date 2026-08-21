@@ -1,5 +1,8 @@
 import OpenAI from "openai";
-import { aiQuizSchema, AIQuiz } from "../schemas/aiQuizSchema";
+import {
+  aiQuizSchema,
+  AIQuiz,
+} from "../schemas/aiQuizSchema.js";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
