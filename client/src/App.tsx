@@ -1,60 +1,75 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Routes,
+  Route,
+} from "react-router-dom";
+
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import CreateQuiz from "./pages/CreateQuiz";
 import QuizDetails from "./pages/QuizDetails";
 import TakeQuiz from "./pages/TakeQuiz";
 import AttemptHistory from "./pages/AttemptHistory";
 import AIGenerateQuiz from "./pages/AIGenerateQuiz";
-import Register from "./pages/Register";
-import { Navigate } from "react-router-dom";
-
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Send visitors to Login */}
         <Route
-        path="/"
-        element={<Navigate to="/login" replace />}
-      />
+          path="/"
+          element={<Navigate to="/login" replace />}
+        />
 
-      <Route
-        path="/login"
-        element={<Login />}
-      />
-      
+        {/* Authentication */}
         <Route
-  path="/register"
-  element={<Register />}
-/>
+          path="/login"
+          element={<Login />}
+        />
+
+        <Route
+          path="/register"
+          element={<Register />}
+        />
+
+        {/* Dashboard */}
         <Route
           path="/dashboard"
           element={<Dashboard />}
         />
+
+        {/* Create quiz */}
         <Route
-  path="/quizzes/new"
-  element={<CreateQuiz />}
-/>
-<Route
-    path="/quizzes/:id"
-    element={<QuizDetails />}
-  />
+          path="/quizzes/new"
+          element={<CreateQuiz />}
+        />
 
-  <Route
-  path="/quizzes/:id/take"
-  element={<TakeQuiz />}
-/>
+        {/* View quiz */}
+        <Route
+          path="/quizzes/:id"
+          element={<QuizDetails />}
+        />
 
-<Route
-  path="/attempts"
-  element={<AttemptHistory />}
-/>
+        {/* Take quiz */}
+        <Route
+          path="/quizzes/:id/take"
+          element={<TakeQuiz />}
+        />
 
-<Route
-  path="/quizzes/generate"
-  element={<AIGenerateQuiz />}
-/>
+        {/* Attempt history */}
+        <Route
+          path="/attempts"
+          element={<AttemptHistory />}
+        />
+
+        {/* AI quiz generator */}
+        <Route
+          path="/quizzes/generate"
+          element={<AIGenerateQuiz />}
+        />
       </Routes>
     </BrowserRouter>
   );
