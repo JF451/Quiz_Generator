@@ -35,7 +35,7 @@ export default function Register() {
     try {
       setLoading(true);
 
-      await apiRequest("/auth/register", {
+      await apiRequest("api/auth/register", {
         method: "POST",
         body: JSON.stringify({
           email,
